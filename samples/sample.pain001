@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>MSG-20261124-001</MsgId>
+      <CreDtTm>2026-11-24T09:15:00Z</CreDtTm>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>42500.50</CtrlSum>
+      <InitgPty>
+        <Nm>ACME TREASURY GMBH</Nm>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>PMT-BATCH-20261124-A</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <NbOfTxs>3</NbOfTxs>
+      <CtrlSum>42500.50</CtrlSum>
+      <ReqdExctnDt>
+        <Dt>2026-11-25</Dt>
+      </ReqdExctnDt>
+      <Dbtr>
+        <Nm>ACME TREASURY GMBH</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>DE89370400440532013000</IBAN>
+        </Id>
+        <Ccy>EUR</Ccy>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BICFI>DEUTDEFFXXX</BICFI>
+        </FinInstnId>
+      </DbtrAgt>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INSTR-2026-0001</InstrId>
+          <EndToEndId>E2E-INV-2026-8841</EndToEndId>
+          <UETR>9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d</UETR>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">25000.00</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BICFI>ABNANL2AXXX</BICFI>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>NORTH SEA LOGISTICS BV</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>NL91ABNA0417164300</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>INVOICE 2026-8841 Q4 FREIGHT SETTLEMENT</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INSTR-2026-0002</InstrId>
+          <EndToEndId>E2E-INV-2026-8842</EndToEndId>
+          <UETR>1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed</UETR>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">12500.50</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BICFI>BNPAFRPPXXX</BICFI>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>ATELIER LYON SAS</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>FR7630006000011234567890189</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>INVOICE 2026-8842 COMPONENT SUPPLY</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+      <CdtTrfTxInf>
+        <PmtId>
+          <InstrId>INSTR-2026-0003</InstrId>
+          <EndToEndId>E2E-INV-2026-8843</EndToEndId>
+          <UETR>6ec0bd7f-11c0-43da-975e-2a8ad9ebae0b</UETR>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">5000.00</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BICFI>NWBKGB2LXXX</BICFI>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>THAMES ADVISORY LTD</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>GB29NWBK60161331926819</IBAN>
+          </Id>
+        </CdtrAcct>
+        <RmtInf>
+          <Ustrd>INVOICE 2026-8843 COMPLIANCE AUDIT FEE</Ustrd>
+        </RmtInf>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

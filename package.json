@@ -1,0 +1,315 @@
+{
+  "name": "zovo-iso20022-viewer",
+  "displayName": "ISO 20022 Payment Viewer",
+  "description": "Open ISO 20022 banking XML files (.iso20022, .pain001, .camt053, .pacs008, .sepa) in VS Code: headers, payments, IBAN checks and control totals, locally.",
+  "version": "0.1.0",
+  "publisher": "zovo",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1B1F2A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/iso20022-viewer-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/theluckystrike/iso20022-viewer-vscode/issues"
+  },
+  "homepage": "https://github.com/theluckystrike/iso20022-viewer-vscode#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "Data Science"
+  ],
+  "keywords": [
+    "iso20022",
+    "pain001",
+    "camt053",
+    "pacs008",
+    "sepa",
+    "banking",
+    "iban",
+    "payments"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onUri",
+    "onCustomEditor:zovo-iso20022.viewer"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "zovo-iso20022.viewer",
+        "displayName": "ISO 20022 Payment Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.{iso20022,ISO20022,pain001,PAIN001,camt053,CAMT053,pacs008,PACS008,sepa,SEPA}"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "zovoIso20022.openWith",
+        "title": "Open in ISO 20022 Payment Viewer",
+        "category": "ISO 20022 Viewer",
+        "icon": "$(table)"
+      },
+      {
+        "command": "zovoIso20022.openSample",
+        "title": "Open the Sample ISO 20022 File",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.openWalkthrough",
+        "title": "Get Started",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.moreViewers",
+        "title": "More free tools by Zovo",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.supportDeveloper",
+        "title": "Support the developer",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.auditControlTotals",
+        "title": "Audit ISO 20022 control totals, IBAN MOD-97 and duplicate MsgId (Pro, 1 free try)",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.exportCsvJson",
+        "title": "Export ISO 20022 payments and entries to CSV and JSON (Pro, 1 free try)",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.diffBatches",
+        "title": "Compare ISO 20022 payment batches across two files (Pro, 1 free try)",
+        "category": "ISO 20022 Viewer"
+      },
+      {
+        "command": "zovoIso20022.zovoPro.auditControlTotals",
+        "title": "Zovo Pro: Audit ISO 20022 control totals, IBAN MOD-97 and duplicate MsgId"
+      },
+      {
+        "command": "zovoIso20022.zovoPro.exportCsvJson",
+        "title": "Zovo Pro: Export ISO 20022 payments and entries to CSV and JSON"
+      },
+      {
+        "command": "zovoIso20022.zovoPro.diffBatches",
+        "title": "Zovo Pro: Compare ISO 20022 payment batches across two files"
+      },
+      {
+        "command": "zovoIso20022.zovoTitle.auditControlTotals",
+        "title": "Zovo Pro: Audit ISO 20022 control totals, IBAN MOD-97 and duplicate MsgId"
+      },
+      {
+        "command": "zovoIso20022.zovoTitle.exportCsvJson",
+        "title": "Zovo Pro: Export ISO 20022 payments and entries to CSV and JSON"
+      },
+      {
+        "command": "zovoIso20022.zovoTitle.diffBatches",
+        "title": "Zovo Pro: Compare ISO 20022 payment batches across two files"
+      },
+      {
+        "command": "zovoIso20022.getPro",
+        "title": "Get Zovo Pro (USD 19 once, all Zovo extensions)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.payWithPayPal",
+        "title": "Pay for Zovo Pro with PayPal (USD 19, team of 5 USD 59)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.unlockWithSponsors",
+        "title": "I already paid: activate with GitHub Sponsors",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.enterLicenseKey",
+        "title": "Enter Zovo Pro license key",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.removeLicense",
+        "title": "Remove Zovo Pro from this editor",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.payByCard",
+        "title": "Pay for Zovo Pro by card (USD 19)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoIso20022.enterKey",
+        "title": "Enter a key",
+        "category": "Zovo Pro"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "zovoIso20022.zovoTitle.auditControlTotals",
+          "when": "activeCustomEditorId == 'zovo-iso20022.viewer' && config.zovoIso20022.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoIso20022.zovoTitle.exportCsvJson",
+          "when": "activeCustomEditorId == 'zovo-iso20022.viewer' && config.zovoIso20022.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoIso20022.zovoTitle.diffBatches",
+          "when": "activeCustomEditorId == 'zovo-iso20022.viewer' && config.zovoIso20022.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "zovoIso20022.openWith",
+          "when": "resourceFilename =~ /\\.(iso20022|pain001|camt053|pacs008|sepa)$/i && !explorerResourceIsFolder",
+          "group": "navigation@9"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.auditControlTotals",
+          "when": "resourceFilename =~ /\\.(iso20022|pain001|camt053|pacs008|sepa)$/i && !explorerResourceIsFolder && config.zovoIso20022.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.exportCsvJson",
+          "when": "resourceFilename =~ /\\.(iso20022|pain001|camt053|pacs008|sepa)$/i && !explorerResourceIsFolder && config.zovoIso20022.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.diffBatches",
+          "when": "resourceFilename =~ /\\.(iso20022|pain001|camt053|pacs008|sepa)$/i && !explorerResourceIsFolder && config.zovoIso20022.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "zovoIso20022.auditControlTotals",
+          "when": "config.zovoIso20022.showProTools"
+        },
+        {
+          "command": "zovoIso20022.exportCsvJson",
+          "when": "config.zovoIso20022.showProTools"
+        },
+        {
+          "command": "zovoIso20022.diffBatches",
+          "when": "config.zovoIso20022.showProTools"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.auditControlTotals",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.exportCsvJson",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.zovoPro.diffBatches",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.zovoTitle.auditControlTotals",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.zovoTitle.exportCsvJson",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.zovoTitle.diffBatches",
+          "when": "false"
+        },
+        {
+          "command": "zovoIso20022.openWith",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "ISO 20022 Payment Viewer",
+      "properties": {
+        "zovoIso20022.maxFileMB": {
+          "type": "number",
+          "default": 50,
+          "minimum": 1,
+          "maximum": 512,
+          "description": "Files up to this size open in the ISO 20022 viewer."
+        },
+        "zovoIso20022.pageSize": {
+          "type": "number",
+          "default": 100,
+          "minimum": 20,
+          "maximum": 500,
+          "description": "Rows shown on one page of the payment and entry table."
+        },
+        "zovoIso20022.showProTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Zovo Pro tools (control-total audit, CSV/JSON export and batch diff) in the Command Palette, the Explorer menu, the editor title menu and the viewer toolbar. Everything free stays visible."
+        },
+        "zovoIso20022.askForRating": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask once for a Marketplace rating after 2 ISO 20022 files open without an error. Choosing No thanks never asks again. Nothing is sent anywhere."
+        },
+        "zovoIso20022.showSupportLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the small Rate, More free tools and Zovo Pro links at the bottom of the viewer. Nothing is sent anywhere."
+        },
+        "zovo.iso20022.trial.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the 7-day Zovo Pro trial button in the Pro panel."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "zovoIso20022.start",
+        "title": "Get started with the ISO 20022 Payment Viewer",
+        "description": "Read ISO 20022 banking payment and statement XML files, group headers, payments, IBAN checks and control totals in VS Code, locally.",
+        "steps": [
+          {
+            "id": "open",
+            "title": "Open an ISO 20022 file",
+            "description": "Click any .iso20022, .pain001, .camt053, .pacs008 or .sepa file in the Explorer to inspect headers, payments, IBAN checks and control totals.\n[Open the sample ISO 20022 file](command:zovoIso20022.openSample)",
+            "media": {
+              "image": "images/screenshot.png",
+              "altText": "An ISO 20022 payment file open in the viewer with message header summary, payment table, detail inspector and control-total checks."
+            },
+            "completionEvents": [
+              "onCommand:zovoIso20022.openSample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "package": "npx -y @vscode/vsce@3 package --no-dependencies"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/theluckystrike/sponsorships?tier_id=679878"
+  }
+}
